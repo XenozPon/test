@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Logger</title>
+</head>
+<body>
+    <h1>Добро пожаловать на сайт!</h1>
+    <?php
+        // Получаем IP-адрес пользователя
+        $userIp = $_SERVER['REMOTE_ADDR'];
+
+        // Записываем IP-адрес в текстовый файл
+        $logMessage = "IP пользователя, зашедшего на сайт: $userIp\n";
+        file_put_contents('ip_log.txt', $logMessage, FILE_APPEND);
+    ?>
+</body>
+</html>
